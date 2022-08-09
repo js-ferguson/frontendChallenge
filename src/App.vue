@@ -1,36 +1,15 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import YourChampions from "./components/YourChampions.vue";
-import json from "../public/data/characters.json";
+import { RouterView } from "vue-router";
+// import YourChampions from "./views/YourChampions.vue";
+// import json from "../public/data/characters.json";
 </script>
 
 <template>
-  <div class="row">
-    <div class="col-md-12">
-      <img
-        alt="Kombat logo"
-        class="logo"
-        src="@/assets/Mortal-Kombat-Logo.png"
-        width="125"
-        height="125"
-      />
-
-      <div class="wrapper row">
-        <YourChampions msg="Your Champions!" :characterData="json" />
-
-        <nav>
-          <RouterLink to="/">Home</RouterLink>
-          <!-- <RouterLink to="/about">About</RouterLink> -->
-        </nav>
-      </div>
-    </div>
-
-    <RouterView />
-  </div>
+  <RouterView />
 </template>
 
 <style scoped>
-header {
+/* header {
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -90,5 +69,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
