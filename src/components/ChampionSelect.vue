@@ -74,6 +74,10 @@ export default defineComponent({
       console.log(result);
       return result;
     },
+    clearTags() {
+      this.selectedCharacters = [];
+      this.selectedTags = [];
+    },
   },
 });
 </script>
@@ -85,10 +89,12 @@ export default defineComponent({
         v-for="tag in tags"
         v-bind:key="tag"
         class="btn btn-outline-primary tag me-2 mt-2"
+        :class="{ active: selectedTags.includes(tag) }"
         @click="selectedChars(tag)"
       >
         {{ tag }}
       </span>
+      <div class="clear" @click="clearTags">Clear all</div>
     </div>
   </div>
   <div class="row justify-content-md-center mt-5">
@@ -172,6 +178,11 @@ h3 {
   border-radius: 50px;
 }
 
+.clear {
+  width: 100px;
+  display: inline-block;
+  transform: translate(5px, 8px);
+}
 /*
 
 .greetings h1,
