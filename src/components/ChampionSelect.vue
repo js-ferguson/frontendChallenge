@@ -107,10 +107,14 @@ export default defineComponent({
         </thead>
         <tbody>
           <tr
-            v-for="(char, index) in this.filteredCharacters"
+            v-for="(char, index) in this.filteredCharacters.slice(0, 5)"
             v-bind:key="index"
           >
-            <th scope="row">{{ char.name }}</th>
+            <th scope="row">
+              <input class="form-check-input mt-3" type="checkbox" value="" />
+              <img class="thumbnail ms-5 me-5" :src="char.thumbnail" />
+              <strong>{{ char.name }}</strong>
+            </th>
             <td>
               <button
                 v-for="tag in char.tags"
@@ -156,6 +160,13 @@ h3 {
   font-size: 1.2rem;
 }
 */
+
+.thumbnail {
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+  border: 1px solid #73acfe;
+}
 
 .tag {
   border-radius: 50px;

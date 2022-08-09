@@ -50,7 +50,12 @@ export default defineComponent({
 </script>
 
 <template>
-  <h3 class="col-md-12 mt-4 text-center">Select your squad to defend Earthrealm</h3>
+  <h3 class="col-md-12 mt-4 text-center">
+    Select your squad to defend Earthrealm
+  </h3>
+  <div class="row">
+    <div class="col-md-12"></div>
+  </div>
   <div class="row justify-content-md-center">
     <div
       v-for="(value, key, index) in attributeAverages"
