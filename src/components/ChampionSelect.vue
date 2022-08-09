@@ -32,26 +32,13 @@ export default defineComponent({
     filteredCharacters(tag) {
       return [...new Set(this.selectedCharacters)];
     },
-
-    // calculateScore(index, attribute) {
-    //   console.log("index:", index);
-    //   let result = null;
-    //   this.filteredCharacters[index].abilities.forEach((abil) => {
-    //     if (abil.abilityName === attribute) {
-    //       console.log(abil.abilityScore);
-    //       result = abil.abilityScore;
-    //     }
-    //   });
-    //   console.log(result);
-    //   return result;
-    // },
   },
 
   methods: {
     selectedChars(tag) {
       this.selectedTags.push(tag);
       this.selectedTags.forEach((tag) => {
-        this.characterData.forEach((character, index) => {
+        this.characterData.forEach((character) => {
           if (character.tags !== undefined) {
             character.tags.forEach((slot) => {
               if (slot.tag_name === tag) {
@@ -138,17 +125,6 @@ export default defineComponent({
             <td>{{ calculateScore(index, "Survivability") }}</td>
             <td>{{ calculateScore(index, "Energy") }}</td>
           </tr>
-          <!-- <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr> -->
         </tbody>
       </table>
     </div>
@@ -156,17 +132,6 @@ export default defineComponent({
 </template>
 
 <style scoped>
-/* h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-*/
-
 .thumbnail {
   border-radius: 50px;
   height: 50px;
@@ -183,17 +148,4 @@ h3 {
   display: inline-block;
   transform: translate(5px, 8px);
 }
-/*
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
-} */
 </style>
